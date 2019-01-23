@@ -1,0 +1,19 @@
+.prof{
+    min-height: 650px !important;
+    
+    
+}
+.ui-datepicker { font-size:11pt;
+                  width: 13em;
+                  
+                }
+
+ select.ui-datepicker-year {
+   
+ 	width: 130px !important;
+ }
+
+ .pd{
+ 	padding-top: 5px;
+ }
+                 

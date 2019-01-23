@@ -1,0 +1,18 @@
+.index{
+    background-color: lightgrey;
+    width: 300px;
+    padding: 25px;
+    border: 2px solid #FF9966;
+    margin: 25px;
+}
+
+.fc-left h2{
+    font-size: 25px;
+}
+.forwidths{
+    width: 99.906%;
+    height: 50%;    
+}
+#main .ui-state-highlight{
+    height: auto !important;
+}
