@@ -232,6 +232,12 @@ class HrmUserMaster extends CActiveRecord
             return $user;
         }
 
+        public function mdbcheck()
+        {
+            $mdbdata = Yii::app()->db->createCommand("SELECT * from hrm_user_master")->queryRow();
+            return $mdbdata;
+        }
+        
         public function getalldetails($empnumber)
         {
             $getall = Yii::app()->db->createCommand("SELECT a.emp_firstname,a.emp_middle_name,a.emp_lastname,"

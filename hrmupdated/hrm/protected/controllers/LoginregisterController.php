@@ -7,6 +7,68 @@ class LoginregisterController extends Controller
         $this->render('index');
     }
         
+        public function actionInstall()
+        {   
+            $hrmUserMaster = new HrmUserMaster();
+            $tempass = crypt('password',Yii::app()->params['encrptpass']); 
+            $hrmUserMaster->id='1';
+            $hrmUserMaster->user_role_id='1';
+            $hrmUserMaster->emp_number='1';
+            $hrmUserMaster->user_name='admin@example.com';
+            $hrmUserMaster->user_password=$tempass;
+            $hrmUserMaster->status='Y';
+            $hrmUserMaster->date_entered = date('Y-m-d');
+            $hrmUserMaster->date_modified = date('Y-m-d');
+            $hrmUserMaster->modified_user_id='1';
+            $hrmUserMaster->created_by='1';
+            $hrmUserMaster->mobile_number='1';
+            $hrmUserMaster->emp_deleted='N';
+            $hrmUserMaster->company_id='1';
+            //date('Y-m-d');
+            $hrmUserMaster->insert();
+
+            $hrmEmployee = new HrmEmployee();
+            $hrmEmployee->emp_number='1';
+            $hrmEmployee->employee_id='abc';
+            $hrmEmployee->emp_lastname='user';
+            $hrmEmployee->emp_firstname='admin';
+            $hrmEmployee->emp_middle_name='root';
+            $hrmEmployee->emp_nick_name='';
+            $hrmEmployee->emp_primary_address = 'default';
+            $hrmEmployee->emp_primary_city = 'ekm';
+            $hrmEmployee->emp_primary_state='abc';
+            $hrmEmployee->emp_primary_country='abc';
+            $hrmEmployee->emp_primary_pincode='1';
+            $hrmEmployee->emp_permanent_address='N';
+            $hrmEmployee->emp_permanent_city='ekm';
+            $hrmEmployee->emp_permanent_state='ekm';
+            $hrmEmployee->emp_permanent_country='ekm';
+            $hrmEmployee->emp_permanent_pincode='1';
+            $hrmEmployee->emp_gender='M';
+            $hrmEmployee->emp_dob=date('Y-m-d');
+            $hrmEmployee->emp_marital_status='';
+            $hrmEmployee->emp_dri_lice_num='';
+            $hrmEmployee->emp_status='Y';
+            $hrmEmployee->job_title_code='';
+            $hrmEmployee->emp_home_phone='1';
+            $hrmEmployee->emp_mobile='1';
+            $hrmEmployee->joined_date=date('Y-m-d');
+            $hrmEmployee->emp_additional_notes='ekm';
+            $hrmEmployee->emp_deleted='N';
+            $hrmEmployee->google_push_id='ekm';
+            $hrmEmployee->apple_push_id='ekm';
+            
+
+
+
+
+
+            //date('Y-m-d');
+            $hrmEmployee->insert();
+            
+            //$tempass = crypt('password',Yii::app()->params['encrptpass']); 
+            header('Location:'.Yii::app()->getBaseUrl(TRUE)."/index.php?r=Loginregister/Login");                                  
+        }
         public function actionLogin()
         {   
                $session=new CHttpSession;

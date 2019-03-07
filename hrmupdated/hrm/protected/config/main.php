@@ -113,10 +113,10 @@ return array(
             
 					            
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=netstratum_hrm',
+			'connectionString' => 'mysql:host=localhost;dbname=hrm',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'tr1vandrum',
+			'password' => 'sanjay123',
 			'charset' => 'utf8',
 		),
 		

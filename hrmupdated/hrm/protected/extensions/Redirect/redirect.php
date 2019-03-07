@@ -26,8 +26,21 @@ class redirect extends CApplicationComponent
         $session->open();
         if (!isset($session['memberid']))
             {
+             $hrmUserMaster = new HrmUserMaster();
+  
+             $memberCheck = $hrmUserMaster->mdbcheck();
+             if ($memberCheck=='')
+            {
 
           
+           // $this->redirect('Loginregister/Install');
+            
+          header('Location:'.Yii::app()->getBaseUrl(TRUE)."/index.php?r=Loginregister/Install");
+          exit;
+            
+            
+        }
+    
            // $this->redirect('Loginregister/Login');
             
           header('Location:'.Yii::app()->getBaseUrl(TRUE)."/index.php?r=Loginregister/Login");
